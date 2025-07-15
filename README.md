@@ -67,20 +67,69 @@ Modern electronic markets operate on *sub-millisecond timescales* with complex L
 ---
 
 ## 🗂️ Project Structure
-lob-mm-simulator/
-├── src/
-│   ├── order_book/              # LOB engine, matching logic, order types  
-│   ├── strategies/              # MM strategy implementations  
-│   ├── risk_management/         # Position and risk modules  
-│   ├── simulation/              # Simulation engine, event generation  
-│   ├── analytics/               # Performance metrics, visualizations  
-│   ├── data/                    # Data ingestion and generation  
-│   └── utils/                   # Config, logging, helpers  
-├── notebooks/                   # Exploratory analysis, visualization  
-├── tests/                       # Unit and integration tests  
-├── config/                      # YAML config files for strategies and simulation  
-├── requirements.txt             # Python dependencies  
-├── README.md                    # Project overview  
-├── docker-compose.yml           # Reproducible dev environment  
-└── setup.py                     # Packaging and installation  
+lob_mm_simulator/  
+├── src/  
+│   ├── order_book/  
+│   │   ├── __init__.py  
+│   │   ├── engine.py              # Core LOB matching engine  
+│   │   ├── orders.py              # Order types and validation  
+│   │   ├── market_data.py         # L1/L2 data generation  
+│   │   └── book_state.py          # Order book state management  
+│   ├── strategies/  
+│   │   ├── __init__.py  
+│   │   ├── base_strategy.py       # Abstract strategy interface  
+│   │   ├── avellaneda_stoikov.py  # Optimal MM strategy  
+│   │   ├── glosten_milgrom.py     # Information-based MM  
+│   │   ├── alpha_mm.py            # Alpha-driven MM  
+│   │   └── naive_mm.py            # Simple spread-based MM  
+│   ├── risk_management/  
+│   │   ├── __init__.py  
+│   │   ├── position_manager.py    # Position tracking  
+│   │   ├── risk_limits.py         # Risk limit enforcement  
+│   │   ├── hedging.py             # Delta hedging logic  
+│   │   └── pnl_attribution.py    # P&L breakdown  
+│   ├── simulation/  
+│   │   ├── __init__.py  
+│   │   ├── backtester.py          # Historical simulation    
+│   │   ├── market_simulator.py    # Synthetic market data  
+│   │   ├── latency_model.py       # Network/processing delays  
+│   │   └── execution_model.py     # Realistic execution  
+│   ├── analytics/  
+│   │   ├── __init__.py  
+│   │   ├── performance.py         # Performance metrics  
+│   │   ├── attribution.py        # Return attribution  
+│   │   ├── visualization.py       # Plotting utilities  
+│   │   └── dashboard.py           # Real-time monitoring  
+│   ├── data/  
+│   │   ├── __init__.py  
+│   │   ├── market_data_loader.py  # Data ingestion  
+│   │   ├── synthetic_data.py      # Synthetic market generation  
+│   │   └── data_utils.py          # Data processing utilities  
+│   └── utils/  
+│       ├── __init__.py  
+│       ├── config.py              # Configuration management  
+│       ├── logging.py             # Logging utilities  
+│       └── performance_utils.py   # Performance monitoring  
+├── tests/  
+│   ├── test_order_book/  
+│   ├── test_strategies/  
+│   ├── test_risk_management/  
+│   └── test_simulation/  
+├── notebooks/  
+│   ├── 01_order_book_analysis.ipynb  
+│   ├── 02_strategy_development.ipynb  
+│   ├── 03_backtesting_results.ipynb  
+│   └── 04_performance_analysis.ipynb  
+├── data/  
+│   ├── historical/  
+│   ├── synthetic/  
+│   └── reference/  
+├── config/  
+│   ├── trading_params.yaml  
+│   ├── risk_limits.yaml  
+│   └── simulation_config.yaml  
+├── requirements.txt  
+├── setup.py  
+├── README.md  
+└── docker-compose.yml
 
