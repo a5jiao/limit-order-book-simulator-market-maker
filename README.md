@@ -15,12 +15,6 @@ The simulator models:
 - Advanced MM strategies like **Avellaneda-Stoikov**, **Glosten-Milgrom**, and **alpha-driven quoting**
 - Risk management, delta hedging, latency modeling, and ML integration for predictive quoting
 
-### 🎯 Target Audience
-This project is explicitly built to showcase skills relevant for:
-- Proprietary trading firms (e.g., Jane Street, HRT, Optiver, IMC, SIG)
-- Quant hedge funds and market makers
-- Interviews focused on microstructure, execution algorithms, or strategy research
-
 ---
 
 ## 💼 Project Motivation
@@ -73,4 +67,18 @@ Modern electronic markets operate on *sub-millisecond timescales* with complex L
 ---
 
 ## 🗂️ Project Structure
-
+lob-mm-simulator/
+├── src/
+│ ├── order_book/ # LOB engine, matching logic, order types
+│ ├── strategies/ # MM strategy implementations
+│ ├── risk_management/ # Position and risk modules
+│ ├── simulation/ # Simulation engine, event generation
+│ ├── analytics/ # Performance metrics, visualizations
+│ ├── data/ # Data ingestion and generation
+│ └── utils/ # Config, logging, helpers
+├── notebooks/ # Exploratory analysis, visualization
+├── tests/ # Unit and integration tests
+├── config/ # YAML config files for strategies and simulation
+├── README.md
+├── requirements.txt
+└── docker-compose.yml # Reproducible dev environment
