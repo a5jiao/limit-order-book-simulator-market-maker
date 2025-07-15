@@ -17,7 +17,7 @@ The simulator models:
 
 ---
 
-## \Project Motivation
+## Project Motivation
 
 Modern electronic markets operate on *sub-millisecond timescales* with complex LOB dynamics, adverse selection, and execution risk. The goal of this simulator is to build:
 
