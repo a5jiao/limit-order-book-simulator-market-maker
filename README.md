@@ -67,6 +67,7 @@ Modern electronic markets operate on *sub-millisecond timescales* with complex L
 ---
 
 ## 🗂️ Project Structure
+```
 lob_mm_simulator/  
 ├── src/  
 │   ├── order_book/  
@@ -132,4 +133,4 @@ lob_mm_simulator/
 ├── setup.py  
 ├── README.md  
 └── docker-compose.yml
-
+```
